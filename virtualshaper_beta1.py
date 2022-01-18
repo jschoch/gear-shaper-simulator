@@ -52,7 +52,7 @@ tooth_pitch_spacing = circular_pitch/2
 addendum = gear_module
 dedendum = tooth_height - addendum
 print(f'dedendum {dedendum} ')
-clearance = 1.1
+clearance = 1.0
 depth = tooth_height * clearance 
 
 hyp = math.tan(pressure_angle * math.pi /180) 
@@ -83,7 +83,7 @@ gear_tool = (
             cq.Workplane("front")
             .transformed(offset=(x_gear_tool_start_pos,old_y_pos, 0.0), rotate=(0, 0, 0))
             .vLine(tool_tip_width/2)
-            .polarLineTo(tooth_height * 2,pressure_angle)
+            .polarLine(tooth_height * 2,pressure_angle)
             .hLineTo(tooth_height * 2)
             .vLineTo(0.0)
             .mirrorX()
