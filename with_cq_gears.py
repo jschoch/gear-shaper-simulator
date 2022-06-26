@@ -47,7 +47,8 @@ filename = "out.nc"
 
 # perfect gear comparison
 rotate_compare = (360/tooth_count)/1.5  
-spur_gear = SpurGear(module=gear_module, teeth_number=tooth_count, width=1.0, bore_d=0.1)
+spur_gear = SpurGear(pressure_angle=pressure_angle, module=gear_module, teeth_number=tooth_count, width=1.0, bore_d=0.1)
+
 
 #wp = cq.Workplane('XY').gear(spur_gear).rotateAboutCenter((0,0,1),rotate_compare)
 wp = (
